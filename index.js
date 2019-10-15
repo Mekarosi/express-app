@@ -2,28 +2,9 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const path = require('path');
+const members = require('./public/Members');
 
-const members = [
-  {
-    id: 1,
-    name: 'John Doe',
-    email: 'john@gmail.com',
-    status: 'active'
-  },
-  {
-    id: 2,
-    name: 'Joy Williams',
-    email: 'joy@gmail.com',
-    status: 'inactive'
-  },
-  {
-    id: 3,
-    name: 'Shelly Johnson',
-    email: 'shelly@gmail.com',
-    status: 'active'
-  }
-];
-
+// Gets all members
 app.get('/api/members', (req, res) => {
   res.json(members);
 });
