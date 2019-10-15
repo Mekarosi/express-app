@@ -4,6 +4,14 @@ const PORT = process.env.PORT || 5000;
 const path = require('path');
 const members = require('./public/Members');
 
+const logger = (req, res, next) => {
+  console.log('Hello');
+  next();
+};
+
+// init middleware
+app.use(logger);
+
 // Gets all members
 app.get('/api/members', (req, res) => {
   res.json(members);
