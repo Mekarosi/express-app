@@ -6,11 +6,16 @@ const members = require('./public/Members');
 const logger = require('./middleware/logger');
 
 // init middleware
-app.use(logger);
+//app.use(logger);
 
-// Gets all members
+// Gets All Members
 app.get('/api/members', (req, res) => {
   res.json(members);
+});
+
+//Get Single Member
+app.get('/api/members/:id', (req, res) => {
+  res.send(req.params.id);
 });
 
 //Set static folder
