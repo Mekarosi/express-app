@@ -8,7 +8,7 @@ const logger = require('./middleware/logger');
 // init middleware
 //app.use(logger);
 
-//Body parser Middleware
+//Body Parser Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
